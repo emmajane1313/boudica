@@ -14,7 +14,8 @@ const config: Config = {
         rosa: "#CB708D"
       },
       fontFamily: {
-        arana: "Eclipse"
+        arana: "Eclipse",
+        conso: "Conso Regular",
       }
     },
   },
