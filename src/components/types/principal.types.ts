@@ -3,9 +3,10 @@ export type PrincipalProps = {
 };
 
 export type Dictionary = {
-  Home: {};
-  Nav: {
-    lan: string;
+  Home: {
+    gemara: string;
+    toma: string;
+    por: string;
   };
   "404": {
     nada: string;

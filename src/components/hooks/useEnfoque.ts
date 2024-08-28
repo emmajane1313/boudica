@@ -5,6 +5,7 @@ import { COVERS } from "@/lib/constants";
 const useEnfoque = () => {
   const [nivelZoom, setNivelZoom] = useState<number>(0.5);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [gemara, setGemara] = useState<boolean>(false);
   const [posicion, setPosicion] = useState<{
     x: number;
     y: number;
@@ -132,6 +133,8 @@ const useEnfoque = () => {
     posicion,
     imageRef,
     bookRef,
+    gemara,
+    setGemara,
   };
 };
 

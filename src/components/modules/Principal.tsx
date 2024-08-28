@@ -7,8 +7,16 @@ import Image from "next/legacy/image";
 import { usePathname } from "next/navigation";
 
 const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
-  const { nivelZoom, containerRef, arrastrando, posicion, imageRef, bookRef } =
-    useEnfoque();
+  const {
+    nivelZoom,
+    containerRef,
+    arrastrando,
+    posicion,
+    imageRef,
+    bookRef,
+    gemara,
+    setGemara,
+  } = useEnfoque();
   const router = usePathname();
 
   return (
@@ -16,6 +24,20 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
       ref={containerRef}
       className="relative w-full h-screen overflow-hidden bg-offBlack items-center justify-center flex"
     >
+      <div
+        className={`absolute cursor-pointer w-20 h-8 top-5 right-5 z-50 rounded-sm font-conso text-xs flex items-center justify-center ${
+          gemara ? "bg-white text-black" : "border border-white text-white"
+        }`}
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setGemara(!gemara);
+        }}
+      >
+        <div className="relative w-fit h-fit flex items-center justify-center">
+          {dict.Home.gemara}
+        </div>
+      </div>
       <div
         className={`relative transition-transform duration-300 ease-out w-full h-full`}
         style={{
@@ -32,7 +54,7 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
           {(COVERS?.find((co) => router.includes(`/${co.locale}/`))
             ? COVERS?.find((co) => router.includes(`/${co.locale}/`))
             : COVERS?.find((co) => co.locale == "en")
-          )?.imagens?.map((pagina: string, indice: number) => (
+          )?.imagenes?.map((pagina: string, indice: number) => (
             <div
               key={indice}
               className="page relative flex items-center justify-center w-full h-full"
