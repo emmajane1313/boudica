@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Eclipse";
+  src: url("/fonts/eclipse.ttf");
+}
+
+html {
+  background-color: black;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+html::-webkit-scrollbar-track:active {
+  background-color: transparent !important;
+  opacity: 0;
+}
+
+html::-webkit-scrollbar-thumb:active {
+  background-color: transparent !important;
+}

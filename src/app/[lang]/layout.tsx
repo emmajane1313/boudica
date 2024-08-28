@@ -1,5 +1,5 @@
 import Head from "next/head";
-import "./globals.css";
+import "./../../globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     title: "Boudica",
     description:
       "We will not be banned. Todos los géneros, todos los amores, todas las vidas, no seremos prohibidos. Women will not stay banned. زن زندگی آزادی",
-    images: ["https://www.boudica.emancipa.xyz/card.png/"],
+    // images: ["https://www.boudica.emancipa.xyz/card.png/"],
   },
   keywords: "Web3, Web3 Fashion, Moda Web3, Open Source, CC0, Emma-Jane MacKinnon-Lee, Open Source LLMs, DIGITALAX, F3Manifesto, www.digitalax.xyz, www.f3manifesto.xyz, Women, Life, Freedom.",
   openGraph: {
     title: "Boudica",
     description:
       "We will not be banned. Todos los géneros, todos los amores, todas las vidas, no seremos prohibidos. Women will not stay banned. زن زندگی آزادی",
-    images: "https://www.boudica.emancipa.xyz/card.png/",
+    // images: "https://www.boudica.emancipa.xyz/card.png/",
   },
 };
 
