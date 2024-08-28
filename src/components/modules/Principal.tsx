@@ -106,21 +106,21 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
           {path.includes("/es/")
             ? "es"
             : path.includes("/he/")
-            ? "he"
+            ? "א"
             : path.includes("/pt/")
             ? "br"
             : path.includes("/ar/")
-            ? "ar"
+            ? "ع"
             : path.includes("/fa/")
-            ? "fa"
+            ? "د"
             : path.includes("/uk/")
-            ? "uk"
+            ? "уk"
             : path.includes("/yi/")
             ? "yi"
             : path.includes("/fr/")
             ? "fr"
             : path.includes("/ja/")
-            ? "ja"
+            ? "あ"
             : "en"}
         </div>
         <div
