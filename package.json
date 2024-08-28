@@ -13,12 +13,14 @@
     "critters": "^0.0.24",
     "negotiator": "^0.6.3",
     "next": "13.5.4",
+    "page-flip": "^2.0.7",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
+    "@types/page-flip": "^2.0.3",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
