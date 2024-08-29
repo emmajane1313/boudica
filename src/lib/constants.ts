@@ -18,6 +18,10 @@ export const COVERS: {
     locale: "uk",
     imagenes: ["QmRMFBAdMCi6PnvJFJtvBfvhqJRo1FiJGXy3vtbVoC6rWj"],
   },
+  {
+    locale: "ar",
+    imagenes: ["QmSyvyrwKuuUZrXJU5hi7v8jGPazzmTtvEiS3s4hQp16mJ"],
+  },
 ];
 
 export const INFURA_GATEWAY: string = "https://thedial.infura-ipfs.io";
