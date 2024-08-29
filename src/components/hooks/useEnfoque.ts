@@ -3,8 +3,7 @@ import { PageFlip } from "page-flip";
 import { COVERS } from "@/lib/constants";
 
 const useEnfoque = () => {
-  const [nivelZoom, setNivelZoom] = useState<number>(0.5);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [nivelZoom, setNivelZoom] = useState<number>(0.1);
   const [gemara, setGemara] = useState<boolean>(false);
   const [posicion, setPosicion] = useState<{
     x: number;
@@ -15,6 +14,7 @@ const useEnfoque = () => {
     y: number;
   }>({ x: 0, y: 0 });
   const bookRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const pageFlipRef = useRef<PageFlip | null>(null);
   const [arrastrando, setArrastrando] = useState<boolean>(false);
 
@@ -23,7 +23,7 @@ const useEnfoque = () => {
       e.preventDefault();
       setNivelZoom((prevZoom) => {
         const zoomNuevo = prevZoom * (1 - e.deltaY * 0.001);
-        return Math.min(Math.max(zoomNuevo, 0.3), 5);
+        return Math.min(Math.max(zoomNuevo, 0.1), 5);
       });
     };
 
@@ -67,28 +67,29 @@ const useEnfoque = () => {
       }
     };
 
-    const container = containerRef.current;
-    if (container) {
+    const container = bookRef.current;
+    const container1 = containerRef.current;
+    if (container && container1) {
       container.addEventListener("wheel", manejarRueda);
       container.addEventListener("mousedown", manejarMouseDown);
-      container.addEventListener("mousemove", manejarMouseMove);
-      container.addEventListener("mouseup", manejarMouseUp);
-      container.addEventListener("mouseleave", manejarMouseUp);
+      container1.addEventListener("mousemove", manejarMouseMove);
+      container1.addEventListener("mouseup", manejarMouseUp);
+      container1.addEventListener("mouseleave", manejarMouseUp);
       container.addEventListener("touchstart", manejarTouchStart);
-      container.addEventListener("touchmove", manejarTouchMove);
-      container.addEventListener("touchend", manejarMouseUp);
+      container1.addEventListener("touchmove", manejarTouchMove);
+      container1.addEventListener("touchend", manejarMouseUp);
     }
 
     return () => {
-      if (container) {
+      if (container && container1) {
         container.removeEventListener("wheel", manejarRueda);
         container.removeEventListener("mousedown", manejarMouseDown);
-        container.removeEventListener("mousemove", manejarMouseMove);
-        container.removeEventListener("mouseup", manejarMouseUp);
-        container.removeEventListener("mouseleave", manejarMouseUp);
+        container1.removeEventListener("mousemove", manejarMouseMove);
+        container1.removeEventListener("mouseup", manejarMouseUp);
+        container1.removeEventListener("mouseleave", manejarMouseUp);
         container.removeEventListener("touchstart", manejarTouchStart);
-        container.removeEventListener("touchmove", manejarTouchMove);
-        container.removeEventListener("touchend", manejarMouseUp);
+        container1.removeEventListener("touchmove", manejarTouchMove);
+        container1.removeEventListener("touchend", manejarMouseUp);
       }
     };
   }, [arrastrando, empezarArrastre, posicion]);
@@ -127,13 +128,13 @@ const useEnfoque = () => {
 
   return {
     nivelZoom,
-    containerRef,
     arrastrando,
     posicion,
     bookRef,
     gemara,
     setGemara,
-    pageFlipRef
+    pageFlipRef,
+    containerRef
   };
 };
 

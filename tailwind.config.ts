@@ -11,12 +11,13 @@ const config: Config = {
       colors: {
         rojo: "#D63B39",
         azul: "#B1CBC8",
-        rosa: "#CB708D"
+        rosa: "#CB708D",
       },
       fontFamily: {
         arana: "Eclipse",
         conso: "Conso Regular",
-      }
+        type: "Typewriter",
+      },
     },
   },
   plugins: [],

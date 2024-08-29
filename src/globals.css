@@ -13,6 +13,11 @@
   src: url("/fonts/Conso-Regular.otf");
 }
 
+@font-face {
+  font-family: "Typewriter";
+  font-weight: 400;
+  src: url("/fonts/typewriter.ttf");
+}
 
 html {
   background-color: black;
