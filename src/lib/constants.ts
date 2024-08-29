@@ -36,11 +36,11 @@ export const COVERS: {
   },
   {
     locale: "yi",
-    imagenes: [""],
+    imagenes: ["QmYn5swZm3Z72zHAGBbBmxLJtuZW1KVci221JEfAAM8Bm9"],
   },
   {
     locale: "ja",
-    imagenes: [""],
+    imagenes: ["QmPe1W9yKw3TGZPc4gqTAD4ooVjx72aeNCBJRrafm625gm"],
   },
 ];
 
