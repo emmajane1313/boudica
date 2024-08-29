@@ -38,7 +38,7 @@ const PostBox: FunctionComponent<{
           />
         </div>
         <div
-          className={`relative w-3/4 h-48 flex flex-col items-center text-black justify-start`}
+          className={`relative w-3/4 h-[13rem] flex flex-col items-center text-black justify-start`}
         >
           <textarea
             value={descripcion || ""}
@@ -55,7 +55,7 @@ const PostBox: FunctionComponent<{
               );
             }}
             ref={elementoTexto as any}
-            className="relative font-type p-1 bg-[#E2D5C1] text-base w-full h-full break-words focus:outline-none"
+            className="relative font-type p-1 bg-[#E2D5C1] text-base w-full h-full break-words focus:outline-none border-2 border-[#49483F]"
             style={{
               resize: "none",
 
