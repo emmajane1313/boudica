@@ -16,7 +16,6 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
     containerRef,
     arrastrando,
     posicion,
-    imageRef,
     bookRef,
     gemara,
     setGemara,
@@ -43,13 +42,12 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
         </div>
       </div>
       <div
-        className={`relative transition-transform duration-300 ease-out w-full h-full`}
+        className={`relative transition-transform duration-300 ease-out w-fit h-fit`}
         style={{
           transform: `translate(${posicion.x}px, ${posicion.y}px) scale(${nivelZoom})`,
           transformOrigin: "center",
           cursor: arrastrando ? "grabbing" : "grab",
         }}
-        ref={imageRef}
       >
         <div
           className="relative w-full h-full flex items-center justify-center"
@@ -65,9 +63,10 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
             >
               <Image
                 src={`${INFURA_GATEWAY}/ipfs/${pagina}`}
-                layout="fill"
                 objectFit="contain"
                 draggable={false}
+                width={1072}
+                height={1344}
               />
             </div>
           ))}

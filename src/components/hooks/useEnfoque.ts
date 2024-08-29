@@ -14,7 +14,6 @@ const useEnfoque = () => {
     x: number;
     y: number;
   }>({ x: 0, y: 0 });
-  const imageRef = useRef<HTMLDivElement>(null);
   const bookRef = useRef<HTMLDivElement>(null);
   const pageFlipRef = useRef<PageFlip | null>(null);
   const [arrastrando, setArrastrando] = useState<boolean>(false);
@@ -105,8 +104,8 @@ const useEnfoque = () => {
       const padre = document.getElementById("padre");
       if (padre) {
         pageFlipRef.current = new PageFlip(bookRef.current, {
-          width: 453,
-          height: 320,
+          width: 1072,
+          height: 1344,
           maxShadowOpacity: 0.5,
           showCover: true,
           mobileScrollSupport: true,
@@ -131,10 +130,10 @@ const useEnfoque = () => {
     containerRef,
     arrastrando,
     posicion,
-    imageRef,
     bookRef,
     gemara,
     setGemara,
+    pageFlipRef
   };
 };
 
