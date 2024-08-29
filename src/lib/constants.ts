@@ -22,6 +22,14 @@ export const COVERS: {
     locale: "ar",
     imagenes: ["QmSyvyrwKuuUZrXJU5hi7v8jGPazzmTtvEiS3s4hQp16mJ"],
   },
+  {
+    locale: "fr",
+    imagenes: ["QmYCBqzkiApbpQmapPDyovFpTy7UZvtHVRUwaTeXMp6PF8"],
+  },
+  {
+    locale: "he",
+    imagenes: ["QmaVtTpCtRpKfNmEJQRwC3AeV8R13Rq5txF5L4q5dCBXDU"],
+  },
 ];
 
 export const INFURA_GATEWAY: string = "https://thedial.infura-ipfs.io";
