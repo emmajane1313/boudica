@@ -1,10 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { PageFlip } from "page-flip";
 import { COVERS } from "@/lib/constants";
+import { usePathname, useRouter } from "next/navigation";
 
 const useEnfoque = () => {
+  const router = useRouter();
+  const path = usePathname();
   const [nivelZoom, setNivelZoom] = useState<number>(0.1);
   const [gemara, setGemara] = useState<boolean>(false);
+  const [hoverIdioma, setHoverIdioma] = useState<boolean>(false);
+  const [hoverGemara, setHoverGemara] = useState<boolean>(false);
   const [posicion, setPosicion] = useState<{
     x: number;
     y: number;
@@ -126,6 +131,30 @@ const useEnfoque = () => {
     };
   }, []);
 
+  const manejarIdioma = () => {
+    router.push(
+      path.includes("/es/")
+        ? path.replace("/es/", "/en/")
+        : path.includes("/en/")
+        ? path.replace("/en/", "/pt/")
+        : path.includes("/pt/")
+        ? path.replace("/pt/", "/ar/")
+        : path.includes("/ar/")
+        ? path.replace("/ar/", "/fa/")
+        : path.includes("/fa/")
+        ? path.replace("/fa/", "/uk/")
+        : path.includes("/uk/")
+        ? path.replace("/uk/", "/he/")
+        : path.includes("/he/")
+        ? path.replace("/he/", "/yi/")
+        : path.includes("/yi/")
+        ? path.replace("/yi/", "/ja/")
+        : path.includes("/ja/")
+        ? path.replace("/ja/", "/fr/")
+        : path.replace("/fr/", "/es/")
+    );
+  };
+
   return {
     nivelZoom,
     arrastrando,
@@ -134,7 +163,12 @@ const useEnfoque = () => {
     gemara,
     setGemara,
     pageFlipRef,
-    containerRef
+    containerRef,
+    manejarIdioma,
+    hoverGemara,
+    hoverIdioma,
+    setHoverIdioma,
+    setHoverGemara,
   };
 };
 
