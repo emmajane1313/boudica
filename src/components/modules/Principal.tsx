@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import PostBox from "./PostBox";
 import { ModalContext } from "@/app/providers";
 import Panel from "./Panel";
+import Guemara from "./Guemara";
 
 const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
   const {
@@ -19,10 +20,8 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
     setGemara,
     containerRef,
     manejarIdioma,
-    hoverIdioma,
-    hoverGemara,
-    setHoverIdioma,
-    setHoverGemara,
+    publicacion,
+    setPublicacion,
   } = useEnfoque();
   const path = usePathname();
   const context = useContext(ModalContext);
@@ -63,20 +62,16 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
           ))}
         </div>
       </div>
-      <div
-        className={`absolute top-5 right-5 flex items-center justify-center`}
-      >
-        <Panel
-          hoverIdioma={hoverIdioma}
-          manejarIdioma={manejarIdioma}
-          hoverGemara={hoverGemara}
-          manejarGemara={() => setGemara(!gemara)}
-          gemaraTitulo={dict.Home.gemara}
-          setHoverIdioma={setHoverIdioma}
-          setHoverGemara={setHoverGemara}
-        />
-      </div>
-      {gemara && <PostBox dict={dict} lensConectado={context?.lensConectado} />}
+      <Panel
+        dict={dict}
+        manejarIdioma={manejarIdioma}
+        manejarPublicacion={() => setPublicacion(!publicacion)}
+        manejarGemara={() => setGemara(!gemara)}
+      />
+      {publicacion && (
+        <PostBox dict={dict} lensConectado={context?.lensConectado} />
+      )}
+      {gemara && <Guemara dict={dict} lensConectado={context?.lensConectado} />}
     </div>
   );
 };

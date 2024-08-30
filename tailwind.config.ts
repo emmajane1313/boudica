@@ -12,6 +12,7 @@ const config: Config = {
         rojo: "#D63B39",
         azul: "#B1CBC8",
         rosa: "#CB708D",
+        offBlack: "#111313",
       },
       fontFamily: {
         arana: "Eclipse",
