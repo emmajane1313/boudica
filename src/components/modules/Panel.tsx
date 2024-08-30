@@ -61,7 +61,7 @@ const Panel = ({
           titulo: dict.Home.lens,
           funcion: () => manejarLens(),
           loader: lensCargando,
-          activo: lensConectado && isConnected ? true : false,
+          activo: isConnected ? true : false,
         },
       ].map(
         (
