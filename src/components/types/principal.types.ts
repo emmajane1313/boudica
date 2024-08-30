@@ -7,6 +7,8 @@ export type Dictionary = {
     gemara: string;
     toma: string;
     por: string;
+    idioma: string;
+    publicacion: string;
   };
   "404": {
     nada: string;

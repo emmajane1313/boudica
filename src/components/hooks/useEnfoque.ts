@@ -8,8 +8,8 @@ const useEnfoque = () => {
   const path = usePathname();
   const [nivelZoom, setNivelZoom] = useState<number>(0.1);
   const [gemara, setGemara] = useState<boolean>(false);
-  const [hoverIdioma, setHoverIdioma] = useState<boolean>(false);
-  const [hoverGemara, setHoverGemara] = useState<boolean>(false);
+  const [publicacion, setPublicacion] = useState<boolean>(false);
+
   const [posicion, setPosicion] = useState<{
     x: number;
     y: number;
@@ -165,10 +165,8 @@ const useEnfoque = () => {
     pageFlipRef,
     containerRef,
     manejarIdioma,
-    hoverGemara,
-    hoverIdioma,
-    setHoverIdioma,
-    setHoverGemara,
+    publicacion,
+    setPublicacion,
   };
 };
 
