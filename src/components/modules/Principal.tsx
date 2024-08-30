@@ -9,8 +9,14 @@ import PostBox from "./PostBox";
 import { ModalContext } from "@/app/providers";
 import Panel from "./Panel";
 import Guemara from "./Guemara";
+import useConectado from "../hooks/useConectado";
+import { useAccount } from "wagmi";
+import { useAccountModal, useConnectModal } from "@rainbow-me/rainbowkit";
 
 const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
+  const { openConnectModal } = useConnectModal();
+  const { openAccountModal } = useAccountModal();
+  const { address, isConnected } = useAccount();
   const {
     nivelZoom,
     arrastrando,
@@ -25,6 +31,13 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
   } = useEnfoque();
   const path = usePathname();
   const context = useContext(ModalContext);
+  const { manejarLens, lensCargando, manejarSalir } = useConectado(
+    address,
+    isConnected,
+    context?.setLensConectado!,
+    openAccountModal,
+    context?.lensConectado!
+  );
   return (
     <div
       className="relative w-full h-screen overflow-hidden bg-offBlack items-center justify-center flex"
@@ -67,6 +80,12 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
         manejarIdioma={manejarIdioma}
         manejarPublicacion={() => setPublicacion(!publicacion)}
         manejarGemara={() => setGemara(!gemara)}
+        lensCargando={lensCargando}
+        manejarLens={manejarLens}
+        manejarSalir={manejarSalir}
+        openConnectModal={openConnectModal}
+        isConnected={isConnected}
+        lensConectado={context?.lensConectado}
       />
       {publicacion && (
         <PostBox dict={dict} lensConectado={context?.lensConectado} />

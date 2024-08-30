@@ -9,6 +9,8 @@ export type Dictionary = {
     por: string;
     idioma: string;
     publicacion: string;
+    billetera: string;
+    lens: string;
   };
   "404": {
     nada: string;
