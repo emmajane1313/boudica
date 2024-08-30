@@ -9,7 +9,6 @@ const useEnfoque = () => {
   const [nivelZoom, setNivelZoom] = useState<number>(0.1);
   const [gemara, setGemara] = useState<boolean>(false);
   const [publicacion, setPublicacion] = useState<boolean>(false);
-
   const [posicion, setPosicion] = useState<{
     x: number;
     y: number;

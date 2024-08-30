@@ -1,4 +1,5 @@
 import Providers from "../providers";
+import "@rainbow-me/rainbowkit/styles.css";
 import "./../../globals.css";
 import type { Metadata } from "next";
 

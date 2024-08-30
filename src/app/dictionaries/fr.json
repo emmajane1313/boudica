@@ -4,7 +4,9 @@
     "por": "par",
     "gemara": "Guemara",
     "publicacion": "Publier",
-    "idioma": "Langue"
+    "idioma": "Langue",
+    "billetera": "Portefeuille",
+    "lens": "Lens"
   },
   "404": {
     "nada": "Erreur 404 : La page a été prise en otage par des PNJ rebelles. Nous négocions sa libération."
