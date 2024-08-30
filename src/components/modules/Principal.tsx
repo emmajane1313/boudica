@@ -10,10 +10,19 @@ import { ModalContext } from "@/app/providers";
 import Panel from "./Panel";
 import Guemara from "./Guemara";
 import useConectado from "../hooks/useConectado";
-import { useAccount } from "wagmi";
+import { http, useAccount } from "wagmi";
 import { useAccountModal, useConnectModal } from "@rainbow-me/rainbowkit";
+import Modals from "./Modals/Modals";
+import { polygon } from "viem/chains";
+import { createPublicClient } from "viem";
 
 const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
+  const publicClient = createPublicClient({
+    chain: polygon,
+    transport: http(
+      `https://polygon-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
+    ),
+  });
   const { openConnectModal } = useConnectModal();
   const { openAccountModal } = useAccountModal();
   const { address, isConnected } = useAccount();
@@ -88,9 +97,20 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
         lensConectado={context?.lensConectado}
       />
       {publicacion && (
-        <PostBox dict={dict} lensConectado={context?.lensConectado} />
+        <PostBox
+          manejarLens={manejarLens}
+          publicClient={publicClient}
+          dict={dict}
+          lensConectado={context?.lensConectado}
+        />
       )}
       {gemara && <Guemara dict={dict} lensConectado={context?.lensConectado} />}
+      <Modals
+        dict={dict}
+        setErrorInteraccion={context?.setErrorInteraccion!}
+        errorInteraccion={context?.errorInteraccion!}
+        indexar={context?.indexar!}
+      />
     </div>
   );
 };

@@ -79,7 +79,7 @@ const useEnfoque = () => {
       container1.addEventListener("mousemove", manejarMouseMove);
       container1.addEventListener("mouseup", manejarMouseUp);
       container1.addEventListener("mouseleave", manejarMouseUp);
-      container.addEventListener("touchstart", manejarTouchStart);
+      container1.addEventListener("touchstart", manejarTouchStart);
       container1.addEventListener("touchmove", manejarTouchMove);
       container1.addEventListener("touchend", manejarMouseUp);
     }
@@ -91,7 +91,7 @@ const useEnfoque = () => {
         container1.removeEventListener("mousemove", manejarMouseMove);
         container1.removeEventListener("mouseup", manejarMouseUp);
         container1.removeEventListener("mouseleave", manejarMouseUp);
-        container.removeEventListener("touchstart", manejarTouchStart);
+        container1.removeEventListener("touchstart", manejarTouchStart);
         container1.removeEventListener("touchmove", manejarTouchMove);
         container1.removeEventListener("touchend", manejarMouseUp);
       }

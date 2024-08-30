@@ -1,12 +1,14 @@
 {
   "Home": {
-    "toma": "Visual dissent toolkit: street-ready posters and stickers. Print, Paste, Propagate. All CC0.",
-    "por": "by",
     "gemara": "Gemara",
     "publicacion": "Publish",
     "idioma": "Language",
     "billetera": "Wallet",
-    "lens": "Lens"
+    "lens": "Lens",
+    "error": "Something Went Wrong Indexing Your Interaction. Try Again?",
+    "success": "Interaction Successful",
+    "indexing": "Indexing Interaction",
+    "send": "Send"
   },
   "404": {
     "nada": "Error 404: This page has been hijacked by rogue NPCs. We are negotiating it's liberation."

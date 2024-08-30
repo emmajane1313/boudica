@@ -1,12 +1,14 @@
 {
   "Home": {
-    "toma": "Kit de dissidência visual: cartazes e adesivos prontos para a rua. Imprima, Cole, Propague. Tudo CC0.",
-    "por": "por",
     "gemara": "Guemará",
     "publicacion": "Publicar",
     "idioma": "Idioma",
     "billetera": "Carteira",
-    "lens": "Lens"
+    "lens": "Lens",
+    "error": "Algo deu errado ao indexar sua interação. Tente novamente?",
+    "success": "Interação Bem-Sucedida",
+    "indexing": "Indexando Interação",
+    "send": "Enviar"
   },
   "404": {
     "nada": "Erro 404: A página foi sequestrada por NPCs rebeldes. Estamos negociando sua libertação."
