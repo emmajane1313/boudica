@@ -7,11 +7,14 @@ import manejarBuscarPerfiles from "@/lib/helpers/manejarBuscarPerfiles";
 import { Profile } from "../../../graphql/generated";
 import { Dictionary } from "../types/principal.types";
 import { AiOutlineLoading } from "react-icons/ai";
+import { PublicClient } from "viem";
 
 const PostBox: FunctionComponent<{
   dict: Dictionary;
   lensConectado: Profile | undefined;
-}> = ({ dict, lensConectado }): JSX.Element => {
+  manejarLens: () => Promise<void>;
+  publicClient: PublicClient;
+}> = ({ dict, lensConectado, manejarLens, publicClient }): JSX.Element => {
   const {
     descripcion,
     setDescripcion,
@@ -24,7 +27,7 @@ const PostBox: FunctionComponent<{
     hacerPublicacion,
     caretCoord,
     perfilesAbiertos,
-  } = usePostBox();
+  } = usePostBox(manejarLens, publicClient);
 
   return (
     <div className="absolute w-fit h-fit flex items-center justify-center top-5 left-5">
@@ -35,6 +38,7 @@ const PostBox: FunctionComponent<{
             objectFit="contain"
             draggable={false}
             src={`${INFURA_GATEWAY}/ipfs/QmSG41NVPbwZgUSan7HdnAEztLnPJC4UWGnAJk2747eY4E`}
+            priority
           />
         </div>
         <div
@@ -58,14 +62,14 @@ const PostBox: FunctionComponent<{
             className="relative font-type p-1 bg-[#E2D5C1] text-base w-full h-full break-words focus:outline-none border-2 border-[#49483F]"
             style={{
               resize: "none",
-
             }}
           ></textarea>
-          {/* <div
-            className={`absolute font-vcr bottom-2 right-2 flex items-center justify-center border border-white rounded-md w-14 text-xxs h-7 ${
-              !cargandoConexion && "cursor-pointer active:scale-95"
+          <div
+            className={`absolute font-vcr bottom-2 right-2 flex items-center justify-center font-conso w-fit text-xs h-fit ${
+              !cargandoConexion &&
+              "cursor-pointer active:scale-95 hover:opacity-70"
             }`}
-            onClick={() => hacerPublicacion()}
+            onClick={() => !cargandoConexion && hacerPublicacion()}
           >
             {cargandoConexion ? (
               <div
@@ -73,12 +77,12 @@ const PostBox: FunctionComponent<{
                   cargandoConexion && "animate-spin"
                 }`}
               >
-                <AiOutlineLoading size={15} color="white" />
+                <AiOutlineLoading size={15} color="black" />
               </div>
             ) : (
               dict.Home.send
             )}
-          </div> */}
+          </div>
           {mencionarPerfiles?.length > 0 && perfilesAbiertos && (
             <div
               className={`absolute w-40 border border-white max-h-40 h-fit flex flex-col overflow-y-auto items-start justify-start z-100`}

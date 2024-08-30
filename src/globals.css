@@ -29,17 +29,46 @@ html::-webkit-scrollbar {
   opacity: 0;
 }
 
-html::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  opacity: 0;
-}
-
 html::-webkit-scrollbar-track:active {
   background-color: transparent !important;
   opacity: 0;
 }
 
 html::-webkit-scrollbar-thumb:active {
+  background-color: transparent !important;
+}
+
+div::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+
+div::-webkit-scrollbar-track:active {
+  background-color: transparent !important;
+  opacity: 0;
+}
+
+div::-webkit-scrollbar-thumb:active {
+  background-color: transparent !important;
+}
+
+
+
+textarea::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+
+
+textarea::-webkit-scrollbar-track:active {
+  background-color: transparent !important;
+  opacity: 0;
+}
+
+textarea::-webkit-scrollbar-thumb:active {
   background-color: transparent !important;
 }

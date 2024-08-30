@@ -5,14 +5,20 @@ export type PrincipalProps = {
 export type Dictionary = {
   Home: {
     gemara: string;
-    toma: string;
-    por: string;
     idioma: string;
     publicacion: string;
     billetera: string;
     lens: string;
+    error: string;
+    send: string;
   };
   "404": {
     nada: string;
   };
 };
+
+export enum Indexar {
+  Inactivo = "inactivo",
+  Exito = "success",
+  Indexando = "indexing",
+}

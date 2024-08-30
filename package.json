@@ -13,6 +13,7 @@
     "@formatjs/intl-localematcher": "^0.5.4",
     "@rainbow-me/rainbowkit": "^2.1.5",
     "critters": "^0.0.24",
+    "lodash": "^4.17.21",
     "negotiator": "^0.6.3",
     "next": "13.5.4",
     "page-flip": "^2.0.7",
@@ -26,12 +27,14 @@
     "wagmi": "^2.12.7"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.7",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/page-flip": "^2.0.3",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/textarea-caret": "^3.0.3",
+    "@types/uuid": "^10.0.0",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",

@@ -1,12 +1,14 @@
 {
   "Home": {
-    "toma": "Kit de disenso visual: carteles y pegatinas listos para la calle. Imprime, Pega, Propaga. Todo CC0.",
-    "por": "por",
     "gemara": "Guemará",
     "publicacion": "Publicar",
     "idioma": "Idioma",
     "billetera": "Billetera",
-    "lens": "Lens"
+    "lens": "Lens",
+    "error": "Algo salió mal al indexar su interacción. ¿Inténtelo de nuevo?",
+    "success": "Interacción Exitosa",
+    "indexing": "Indexando Interacción",
+    "send": "Enviar"
   },
   "404": {
     "nada": "Error 404: La página ha sido secuestrada por NPCs rebeldes. Estamos negociando su liberación."
