@@ -39,13 +39,13 @@ const Panel = ({
           activo: true,
         },
         {
-          imagen: "QmWkAoCCBLSkK4ZhRo6Q3ZPrMHYDfuFQWMThgbREWwVMj7",
+          imagen: "QmarDKzwhbgnw6gdkDmbyEtJYia9889foeHobexLhvCjz1",
           titulo: dict.Home.gemara,
           funcion: () => manejarGemara(),
           activo: true,
         },
         {
-          imagen: "QmarDKzwhbgnw6gdkDmbyEtJYia9889foeHobexLhvCjz1",
+          imagen: "QmWkAoCCBLSkK4ZhRo6Q3ZPrMHYDfuFQWMThgbREWwVMj7",
           titulo: dict.Home.publicacion,
           funcion: () => manejarPublicacion(),
           activo: true,
