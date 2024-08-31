@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { MutableRefObject, Ref, useContext, useRef, useState } from "react";
 import { Profile } from "../../../graphql/generated";
 import { custom, useAccount } from "wagmi";
 import { ModalContext } from "@/app/providers";
@@ -8,10 +8,13 @@ import { ErrorTipo, Indexar } from "../types/principal.types";
 import { createWalletClient, PublicClient } from "viem";
 import subirContenido from "@/lib/helpers/subirContenido";
 import publicarLens from "@/lib/helpers/publicarLens";
+import { PageFlip } from "page-flip";
 
 const usePostBox = (
   manejarLens: () => Promise<void>,
-  publicClient: PublicClient
+  publicClient: PublicClient,
+  pageFlipRef: MutableRefObject<PageFlip | null>,
+  comentarioId: string | undefined
 ) => {
   const { address, isConnected } = useAccount();
   const context = useContext(ModalContext);
@@ -41,7 +44,13 @@ const usePostBox = (
     if (descripcion.trim() == "") return;
     setCargandoConexion(true);
     try {
-      const contentURI = await subirContenido(descripcion, [], [], []);
+      const contentURI = await subirContenido(
+        descripcion,
+        [],
+        [],
+        [],
+        "pagina" + pageFlipRef?.current?.getCurrentPageIndex().toString()
+      );
 
       const clientWallet = createWalletClient({
         chain: polygon,
@@ -64,7 +73,8 @@ const usePostBox = (
         publicClient,
         context?.setIndexar,
         context?.setErrorInteraccion,
-        () => setCargandoConexion(false)
+        () => setCargandoConexion(false),
+        comentarioId
       );
       setDescripcion("");
     } catch (err: any) {

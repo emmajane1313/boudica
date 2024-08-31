@@ -31,6 +31,8 @@ export const ModalContext = createContext<
       setIndexar: (e: SetStateAction<Indexar>) => void;
       errorInteraccion: ErrorTipo;
       setErrorInteraccion: (e: SetStateAction<ErrorTipo>) => void;
+      mostrarDetalles: string | undefined;
+      setMostrarDetalles: (e: SetStateAction<string | undefined>) => void;
     }
   | undefined
 >(undefined);
@@ -41,6 +43,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   const [errorInteraccion, setErrorInteraccion] = useState<ErrorTipo>(
     ErrorTipo.Inactivo
   );
+  const [mostrarDetalles, setMostrarDetalles] = useState<string | undefined>();
+
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
@@ -53,6 +57,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
               setIndexar,
               errorInteraccion,
               setErrorInteraccion,
+              mostrarDetalles,
+              setMostrarDetalles,
             }}
           >
             {children}

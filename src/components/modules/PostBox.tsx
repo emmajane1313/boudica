@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, MutableRefObject } from "react";
 import usePostBox from "../hooks/usePostBox";
 import Image from "next/legacy/image";
 import { INFURA_GATEWAY } from "@/lib/constants";
@@ -8,6 +8,7 @@ import { Profile } from "../../../graphql/generated";
 import { Dictionary } from "../types/principal.types";
 import { AiOutlineLoading } from "react-icons/ai";
 import { PublicClient } from "viem";
+import { PageFlip } from "page-flip";
 
 const PostBox: FunctionComponent<{
   dict: Dictionary;
@@ -15,12 +16,16 @@ const PostBox: FunctionComponent<{
   manejarLens: () => Promise<void>;
   publicClient: PublicClient;
   path: string;
+  pageFlipRef: MutableRefObject<PageFlip | null>;
+  comentarioId: string | undefined
 }> = ({
   dict,
   lensConectado,
   manejarLens,
   publicClient,
   path,
+  pageFlipRef,
+  comentarioId
 }): JSX.Element => {
   const {
     descripcion,
@@ -34,7 +39,7 @@ const PostBox: FunctionComponent<{
     hacerPublicacion,
     caretCoord,
     perfilesAbiertos,
-  } = usePostBox(manejarLens, publicClient);
+  } = usePostBox(manejarLens, publicClient, pageFlipRef, comentarioId);
 
   return (
     <div className="absolute w-fit h-fit flex items-center justify-center top-5 left-5">
