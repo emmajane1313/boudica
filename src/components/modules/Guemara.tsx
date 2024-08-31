@@ -181,7 +181,7 @@ const Guemara: FunctionComponent<{
         </div>
       )}
       <div className="absolute right-5 bottom-5 w-fit h-fit flex flex-row gap-3 items-center justify-center">
-        {(mostrarDetalles ? detallesIndice > 0 : indice > 0) && (
+        {(mostrarDetalles ? detallesIndice > 0 && detallesUbi : indice > 0 && guemaraUbi) && (
           <div
             onClick={() =>
               !masGuemaraCargando &&
