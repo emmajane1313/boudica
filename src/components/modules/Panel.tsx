@@ -15,12 +15,14 @@ const Panel = ({
   openConnectModal,
   isConnected,
   manejarRecentrar,
+  guemara,
 }: {
   manejarIdioma: () => void;
   manejarGuemara: () => void;
   manejarPublicacion: () => void;
   manejarLens: () => Promise<void>;
   lensCargando: boolean;
+  guemara: boolean;
   dict: Dictionary;
   manejarSalir: () => void;
   openConnectModal: (() => void) | undefined;
@@ -36,13 +38,13 @@ const Panel = ({
           imagen: "QmTJbcdJWMkiGuo8hNFtEnYSukGSq6m8Y7D38GweSoEEta",
           titulo: dict.Home.idioma,
           funcion: () => manejarIdioma(),
-          activo: true,
+          activo: !guemara,
         },
         {
           imagen: "QmXM8hbdzWnqQNFFatuTqNvvc2UNggH5WwnoyzUCib8MPJ",
           titulo: dict.Home.recentrar,
           funcion: () => manejarRecentrar(),
-          activo: true,
+          activo: !guemara,
         },
         {
           imagen: "QmarDKzwhbgnw6gdkDmbyEtJYia9889foeHobexLhvCjz1",
@@ -82,7 +84,7 @@ const Panel = ({
         ) => {
           return (
             <div
-              className={`relative w-fit h-fit flex items-center justify-center ${
+              className={`relative  hover:opacity-80 w-fit h-fit flex items-center justify-center ${
                 elemento?.activo && "cursor-pointer active:scale-95"
               }`}
               title={elemento.titulo}

@@ -122,3 +122,8 @@ textarea::-webkit-scrollbar-track:active {
 textarea::-webkit-scrollbar-thumb:active {
   background-color: transparent !important;
 }
+
+
+#juego {
+  box-shadow: inset 0 0 100px #d4412eb3;
+}

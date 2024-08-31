@@ -38,6 +38,7 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
     publicacion,
     setPublicacion,
     manejarRecentrar,
+    pageFlipRef,
   } = useEnfoque();
   const path = usePathname();
   const context = useContext(ModalContext);
@@ -92,14 +93,25 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
           manejarLens={manejarLens}
           publicClient={publicClient}
           dict={dict}
+          pageFlipRef={pageFlipRef}
           lensConectado={context?.lensConectado}
           path={path}
+          comentarioId={context?.mostrarDetalles}
         />
       )}
       {guemara && (
-        <Guemara dict={dict} lensConectado={context?.lensConectado} />
+        <Guemara
+          pageFlipRef={pageFlipRef}
+          guemara={guemara}
+          dict={dict}
+          lensConectado={context?.lensConectado}
+          path={path}
+          mostrarDetalles={context?.mostrarDetalles!}
+          setMostrarDetalles={context?.setMostrarDetalles!}
+        />
       )}
       <Panel
+        guemara={guemara}
         dict={dict}
         manejarIdioma={manejarIdioma}
         manejarPublicacion={() => setPublicacion(!publicacion)}

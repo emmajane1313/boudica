@@ -9,7 +9,8 @@ const subirContenido = async (
     tipo: string;
   }[],
   videos: string[],
-  gifs: string[]
+  gifs: string[],
+  numeroPagina: string
 ): Promise<string | undefined> => {
   let $schema: string,
     mainContentFocus: PublicationMetadataMainFocusType,
@@ -126,6 +127,7 @@ const subirContenido = async (
           id: uuidv4(),
           hideFromFeed: false,
           locale: "en",
+          tags: ["boudica", numeroPagina]?.filter(Boolean),
         },
       }),
     });
