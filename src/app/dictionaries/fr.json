@@ -1,6 +1,6 @@
 {
   "Home": {
-    "gemara": "Guemara",
+    "guemara": "Guemara",
     "publicacion": "Publier",
     "idioma": "Langue",
     "billetera": "Portefeuille",
@@ -8,7 +8,9 @@
     "error": "Quelque chose s'est mal passé lors de l'indexation de votre interaction. Essayez à nouveau ?",
      "success": "Interaction Réussie",
     "indexing": "Indexation de l'interaction",
-    "send": "Envoyer"
+    "send": "Envoyer",
+    "lensHandle": "Réclamez Votre Identifiant Lens Pour Vous Connecter",
+    "recentrar": "Recentrer"
   },
   "404": {
     "nada": "Erreur 404 : La page a été prise en otage par des PNJ rebelles. Nous négocions sa libération."

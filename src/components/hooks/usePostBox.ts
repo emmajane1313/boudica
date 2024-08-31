@@ -4,7 +4,7 @@ import { custom, useAccount } from "wagmi";
 import { ModalContext } from "@/app/providers";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { polygon } from "viem/chains";
-import { Indexar } from "../types/principal.types";
+import { ErrorTipo, Indexar } from "../types/principal.types";
 import { createWalletClient, PublicClient } from "viem";
 import subirContenido from "@/lib/helpers/subirContenido";
 import publicarLens from "@/lib/helpers/publicarLens";
@@ -72,7 +72,7 @@ const usePostBox = (
         !err?.messages?.includes("Block at number") &&
         !err?.message?.includes("could not be found")
       ) {
-        context?.setErrorInteraccion(true);
+        context?.setErrorInteraccion(ErrorTipo.Todo);
         console.error(err.message);
       } else {
         context?.setIndexar(Indexar.Exito);

@@ -1,6 +1,6 @@
 {
   "Home": {
-    "gemara": "Guemará",
+    "guemara": "Guemará",
     "publicacion": "Publicar",
     "idioma": "Idioma",
     "billetera": "Carteira",
@@ -8,7 +8,9 @@
     "error": "Algo deu errado ao indexar sua interação. Tente novamente?",
     "success": "Interação Bem-Sucedida",
     "indexing": "Indexando Interação",
-    "send": "Enviar"
+    "send": "Enviar",
+    "lensHandle": "Reivindique Seu Identificador Lens Para Conectar",
+    "recentrar": "Recentrar"
   },
   "404": {
     "nada": "Erro 404: A página foi sequestrada por NPCs rebeldes. Estamos negociando sua libertação."

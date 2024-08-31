@@ -7,7 +7,7 @@ const useEnfoque = () => {
   const router = useRouter();
   const path = usePathname();
   const [nivelZoom, setNivelZoom] = useState<number>(0.1);
-  const [gemara, setGemara] = useState<boolean>(false);
+  const [guemara, setGuemara] = useState<boolean>(false);
   const [publicacion, setPublicacion] = useState<boolean>(false);
   const [posicion, setPosicion] = useState<{
     x: number;
@@ -21,6 +21,14 @@ const useEnfoque = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const pageFlipRef = useRef<PageFlip | null>(null);
   const [arrastrando, setArrastrando] = useState<boolean>(false);
+
+  const manejarRecentrar = () => {
+    setPosicion({
+      x: 0,
+      y: 0,
+    });
+    setNivelZoom(0.1);
+  };
 
   useEffect(() => {
     const manejarRueda = (e: WheelEvent) => {
@@ -159,13 +167,14 @@ const useEnfoque = () => {
     arrastrando,
     posicion,
     bookRef,
-    gemara,
-    setGemara,
+    guemara,
+    setGuemara,
     pageFlipRef,
     containerRef,
     manejarIdioma,
     publicacion,
     setPublicacion,
+    manejarRecentrar,
   };
 };
 

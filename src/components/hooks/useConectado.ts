@@ -11,11 +11,13 @@ import generateChallenge from "../../../graphql/lens/queries/challenge";
 import authenticate from "../../../graphql/lens/mutations/authenticate";
 import { Profile } from "../../../graphql/generated";
 import { useSignMessage } from "wagmi";
+import { ErrorTipo } from "../types/principal.types";
 
 const useConectado = (
   address: `0x${string}` | undefined,
   isConnected: boolean,
   setLensConectado: (e: SetStateAction<Profile | undefined>) => void,
+  setErrorInteraccion: (e: SetStateAction<ErrorTipo>) => void,
   openAccountModal: (() => void) | undefined,
   lensConectado: Profile | undefined
 ) => {
@@ -58,6 +60,7 @@ const useConectado = (
         }
       } else {
         setLensConectado(undefined);
+        setErrorInteraccion(ErrorTipo.Lens);
       }
     } catch (err: any) {
       console.error(err.message);
@@ -112,7 +115,7 @@ const useConectado = (
   return {
     lensCargando,
     manejarLens,
-    manejarSalir
+    manejarSalir,
   };
 };
 

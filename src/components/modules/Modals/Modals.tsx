@@ -1,25 +1,37 @@
-import { Dictionary, Indexar } from "@/components/types/principal.types";
+import {
+  Dictionary,
+  ErrorTipo,
+  Indexar,
+} from "@/components/types/principal.types";
 import { FunctionComponent, SetStateAction } from "react";
-import { Profile } from "../../../../graphql/generated";
 import Index from "./Index";
 import Error from "./Error";
 
 const Modals: FunctionComponent<{
   dict: Dictionary;
   indexar: Indexar;
-  errorInteraccion: boolean;
-  setErrorInteraccion: (e: SetStateAction<boolean>) => void;
+  errorInteraccion: ErrorTipo;
+  setErrorInteraccion: (e: SetStateAction<ErrorTipo>) => void;
+  path: string;
 }> = ({
   dict,
   errorInteraccion,
   indexar,
   setErrorInteraccion,
+  path,
 }): JSX.Element => {
   return (
     <>
-      {indexar !== Indexar.Inactivo && <Index dict={dict} tipo={indexar!} />}
-      {errorInteraccion && (
-        <Error dict={dict} setErrorInteraccion={setErrorInteraccion!} />
+      {indexar !== Indexar.Inactivo && (
+        <Index path={path} dict={dict} tipo={indexar!} />
+      )}
+      {errorInteraccion !== ErrorTipo.Inactivo && (
+        <Error
+          errorInteraccion={errorInteraccion}
+          dict={dict}
+          setErrorInteraccion={setErrorInteraccion!}
+          path={path}
+        />
       )}
     </>
   );
