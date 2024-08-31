@@ -6,7 +6,7 @@ import { Profile } from "../../../graphql/generated";
 
 const Panel = ({
   manejarIdioma,
-  manejarGemara,
+  manejarGuemara,
   dict,
   manejarPublicacion,
   manejarLens,
@@ -14,10 +14,10 @@ const Panel = ({
   manejarSalir,
   openConnectModal,
   isConnected,
-  lensConectado,
+  manejarRecentrar,
 }: {
   manejarIdioma: () => void;
-  manejarGemara: () => void;
+  manejarGuemara: () => void;
   manejarPublicacion: () => void;
   manejarLens: () => Promise<void>;
   lensCargando: boolean;
@@ -25,7 +25,7 @@ const Panel = ({
   manejarSalir: () => void;
   openConnectModal: (() => void) | undefined;
   isConnected: boolean;
-  lensConectado: Profile | undefined;
+  manejarRecentrar: () => void;
 }) => {
   return (
     <div
@@ -39,9 +39,15 @@ const Panel = ({
           activo: true,
         },
         {
+          imagen: "QmXM8hbdzWnqQNFFatuTqNvvc2UNggH5WwnoyzUCib8MPJ",
+          titulo: dict.Home.recentrar,
+          funcion: () => manejarRecentrar(),
+          activo: true,
+        },
+        {
           imagen: "QmarDKzwhbgnw6gdkDmbyEtJYia9889foeHobexLhvCjz1",
-          titulo: dict.Home.gemara,
-          funcion: () => manejarGemara(),
+          titulo: dict.Home.guemara,
+          funcion: () => manejarGuemara(),
           activo: true,
         },
         {

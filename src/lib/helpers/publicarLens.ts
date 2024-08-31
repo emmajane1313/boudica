@@ -17,7 +17,7 @@ import { SetStateAction } from "react";
 import validateMetadata from "../../../graphql/lens/queries/validate";
 import commentPost from "../../../graphql/lens/mutations/comment";
 import quotePost from "../../../graphql/lens/mutations/quote";
-import { Indexar } from "@/components/types/principal.types";
+import { ErrorTipo, Indexar } from "@/components/types/principal.types";
 import { LENS_HUB_PROXY } from "../constants";
 import limpiarColeccion from "./limpiarColeccion";
 
@@ -28,7 +28,7 @@ const publicarLens = async (
   clientWallet: WalletClient,
   publicClient: PublicClient,
   setIndexar: (e: SetStateAction<Indexar>) => void,
-  setErrorInteraccion: (e: SetStateAction<boolean>) => void,
+  setErrorInteraccion: (e: SetStateAction<ErrorTipo>) => void,
   setCargando: () => void,
   comentario?: string,
   quote?: boolean
@@ -59,7 +59,7 @@ const publicarLens = async (
   });
 
   if (!metadata?.data?.validatePublicationMetadata?.valid) {
-    setErrorInteraccion(true);
+    setErrorInteraccion(ErrorTipo.Todo);
     setCargando();
     return;
   }

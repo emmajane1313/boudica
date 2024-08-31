@@ -14,7 +14,14 @@ const PostBox: FunctionComponent<{
   lensConectado: Profile | undefined;
   manejarLens: () => Promise<void>;
   publicClient: PublicClient;
-}> = ({ dict, lensConectado, manejarLens, publicClient }): JSX.Element => {
+  path: string;
+}> = ({
+  dict,
+  lensConectado,
+  manejarLens,
+  publicClient,
+  path,
+}): JSX.Element => {
   const {
     descripcion,
     setDescripcion,
@@ -59,15 +66,37 @@ const PostBox: FunctionComponent<{
               );
             }}
             ref={elementoTexto as any}
-            className="relative font-type p-1 bg-[#E2D5C1] text-base w-full h-full break-words focus:outline-none border-2 border-[#49483F]"
+            className={`relative p-1 bg-crema text-base w-full h-full break-words focus:outline-none border-2 border-[#49483F] ${
+              path?.includes("/uk/")
+                ? "font-cor"
+                : path?.includes("/ar/") || path?.includes("/fa/")
+                ? "font-dav"
+                : path?.includes("/ja/")
+                ? "font-mat"
+                : path?.includes("/he/") || path?.includes("/yi/")
+                ? "font-rub"
+                : "font-type"
+            }`}
             style={{
               resize: "none",
             }}
           ></textarea>
           <div
-            className={`absolute font-vcr bottom-2 right-2 flex items-center justify-center font-conso w-fit text-xs h-fit ${
+            className={`absolute bottom-2 right-2 flex items-center justify-center w-fit text-xs h-fit ${
               !cargandoConexion &&
               "cursor-pointer active:scale-95 hover:opacity-70"
+            } ${
+              path?.includes("/ar/")
+                ? "font-ruw"
+                : path?.includes("/uk/")
+                ? "font-ad"
+                : path?.includes("/ja/")
+                ? "font-gen"
+                : path?.includes("/he/") || path?.includes("/yi/")
+                ? "font-noto"
+                : path?.includes("/fa/")
+                ? "font-zar"
+                : "font-conso"
             }`}
             onClick={() => !cargandoConexion && hacerPublicacion()}
           >
@@ -85,7 +114,7 @@ const PostBox: FunctionComponent<{
           </div>
           {mencionarPerfiles?.length > 0 && perfilesAbiertos && (
             <div
-              className={`absolute w-40 border border-white max-h-40 h-fit flex flex-col overflow-y-auto items-start justify-start z-100`}
+              className={`absolute w-40 max-h-40 h-fit flex flex-col overflow-y-auto items-start justify-start z-100`}
               style={{
                 top: caretCoord[0].y + 30,
                 left: caretCoord[0].x,
@@ -98,7 +127,7 @@ const PostBox: FunctionComponent<{
                 return (
                   <div
                     key={indexTwo}
-                    className={`relative border-y border-white w-full h-10 px-3 py-2 bg-black flex flex-row gap-3 cursor-pointer items-center justify-center break-all`}
+                    className={`relative w-full h-10 px-3 py-2 bg- flex flex-row gap-3 cursor-pointer bg-crema items-center justify-center break-all`}
                     onClick={() => {
                       setPerfilesAbiertos((prev) => {
                         const arr = [...prev];
@@ -113,7 +142,19 @@ const PostBox: FunctionComponent<{
                       );
                     }}
                   >
-                    <div className="relative flex flex-row w-full h-full text-white font-aust items-center justify-center gap-2">
+                    <div
+                      className={`relative flex flex-row w-full h-full items-center justify-center gap-2 hover:opacity-70 ${
+                        path?.includes("/uk/")
+                          ? "font-cor"
+                          : path?.includes("/ar/") || path?.includes("/fa/")
+                          ? "font-dav"
+                          : path?.includes("/ja/")
+                          ? "font-mat"
+                          : path?.includes("/he/") || path?.includes("/yi/")
+                          ? "font-rub"
+                          : "font-type"
+                      }`}
+                    >
                       <div
                         className={`relative rounded-full flex bg-black w-3 h-3 items-center justify-center`}
                         id="pfp"

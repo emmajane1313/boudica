@@ -7,18 +7,18 @@ import {
 } from "../../generated";
 import { apolloClient } from "@/lib/lens/client";
 import { SetStateAction } from "react";
-import { Indexar } from "@/components/types/principal.types";
+import { ErrorTipo, Indexar } from "@/components/types/principal.types";
 
 const handleIndexCheck = async (
   tx: LensTransactionStatusRequest,
   setIndexar: (e: SetStateAction<Indexar>) => void,
-  setErrorInteraccion: (e: SetStateAction<boolean>) => void
+  setErrorInteraccion: (e: SetStateAction<ErrorTipo>) => void
 ) => {
   const indexedStatus = await pollUntilIndexed(tx);
   if (indexedStatus) {
     setIndexar(Indexar.Exito);
   } else {
-    setErrorInteraccion(true);
+    setErrorInteraccion(ErrorTipo.Todo);
   }
 
   const timeoutId = setTimeout(() => {

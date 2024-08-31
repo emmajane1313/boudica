@@ -31,12 +31,13 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
     arrastrando,
     posicion,
     bookRef,
-    gemara,
-    setGemara,
+    guemara,
+    setGuemara,
     containerRef,
     manejarIdioma,
     publicacion,
     setPublicacion,
+    manejarRecentrar,
   } = useEnfoque();
   const path = usePathname();
   const context = useContext(ModalContext);
@@ -44,6 +45,7 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
     address,
     isConnected,
     context?.setLensConectado!,
+    context?.setErrorInteraccion!,
     openAccountModal,
     context?.lensConectado!
   );
@@ -84,32 +86,40 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
           ))}
         </div>
       </div>
-      <Panel
-        dict={dict}
-        manejarIdioma={manejarIdioma}
-        manejarPublicacion={() => setPublicacion(!publicacion)}
-        manejarGemara={() => setGemara(!gemara)}
-        lensCargando={lensCargando}
-        manejarLens={manejarLens}
-        manejarSalir={manejarSalir}
-        openConnectModal={openConnectModal}
-        isConnected={isConnected}
-        lensConectado={context?.lensConectado}
-      />
+
       {publicacion && (
         <PostBox
           manejarLens={manejarLens}
           publicClient={publicClient}
           dict={dict}
           lensConectado={context?.lensConectado}
+          path={path}
         />
       )}
-      {gemara && <Guemara dict={dict} lensConectado={context?.lensConectado} />}
+      {guemara && (
+        <Guemara dict={dict} lensConectado={context?.lensConectado} />
+      )}
+      <Panel
+        dict={dict}
+        manejarIdioma={manejarIdioma}
+        manejarPublicacion={() => setPublicacion(!publicacion)}
+        manejarGuemara={() => {
+          manejarRecentrar();
+          setGuemara(!guemara);
+        }}
+        lensCargando={lensCargando}
+        manejarLens={manejarLens}
+        manejarSalir={manejarSalir}
+        openConnectModal={openConnectModal}
+        isConnected={isConnected}
+        manejarRecentrar={manejarRecentrar}
+      />
       <Modals
         dict={dict}
         setErrorInteraccion={context?.setErrorInteraccion!}
         errorInteraccion={context?.errorInteraccion!}
         indexar={context?.indexar!}
+        path={path}
       />
     </div>
   );

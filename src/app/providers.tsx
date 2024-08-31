@@ -7,7 +7,7 @@ import { getDefaultConfig } from "@rainbow-me/rainbowkit";
 import { polygon } from "wagmi/chains";
 import { createContext, SetStateAction, useState } from "react";
 import { Profile } from "../../graphql/generated";
-import { Indexar } from "@/components/types/principal.types";
+import { ErrorTipo, Indexar } from "@/components/types/principal.types";
 
 const config = getDefaultConfig({
   appName: "Boudica",
@@ -29,8 +29,8 @@ export const ModalContext = createContext<
       setLensConectado: (e: SetStateAction<Profile | undefined>) => void;
       indexar: Indexar;
       setIndexar: (e: SetStateAction<Indexar>) => void;
-      errorInteraccion: boolean;
-      setErrorInteraccion: (e: SetStateAction<boolean>) => void;
+      errorInteraccion: ErrorTipo;
+      setErrorInteraccion: (e: SetStateAction<ErrorTipo>) => void;
     }
   | undefined
 >(undefined);
@@ -38,7 +38,9 @@ export const ModalContext = createContext<
 export default function Providers({ children }: { children: React.ReactNode }) {
   const [lensConectado, setLensConectado] = useState<Profile | undefined>();
   const [indexar, setIndexar] = useState<Indexar>(Indexar.Inactivo);
-  const [errorInteraccion, setErrorInteraccion] = useState<boolean>(false);
+  const [errorInteraccion, setErrorInteraccion] = useState<ErrorTipo>(
+    ErrorTipo.Inactivo
+  );
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>

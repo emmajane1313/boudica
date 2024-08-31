@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Eclipse";
-  src: url("/fonts/eclipse.ttf");
-}
 
 @font-face {
   font-family: "Conso Regular";
@@ -17,6 +13,60 @@
   font-family: "Typewriter";
   font-weight: 400;
   src: url("/fonts/typewriter.ttf");
+}
+
+@font-face {
+  font-family: "Corona";
+  font-weight: 400;
+  src: url("/fonts/corona.ttf");
+}
+
+@font-face {
+  font-family: "MatatakiMincho";
+  font-weight: 400;
+  src: url("/fonts/MatatakiMincho.otf");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-weight: 400;
+  src: url("/fonts/Rubik.ttf");
+}
+
+@font-face {
+  font-family: "BDavat";
+  font-weight: 400;
+  src: url("/fonts/BDavat.ttf");
+}
+
+@font-face {
+  font-family: "Ruwudu";
+  font-weight: 400;
+  src: url("/fonts/Ruwudu.ttf");
+}
+
+@font-face {
+  font-family: "AdonisC";
+  font-weight: 400;
+  src: url("/fonts/AdonisC.ttf");
+}
+
+@font-face {
+  font-family: "GenEiLateMinP_v2";
+  font-weight: 400;
+  src: url("/fonts/GenEiLateMinP_v2.ttf");
+}
+
+@font-face {
+  font-family: "Noto";
+  font-weight: 400;
+  src: url("/fonts/Noto.ttf");
+}
+
+@font-face {
+  font-family: "Zar";
+  font-weight: 400;
+  src: url("/fonts/Zar.ttf");
 }
 
 html {

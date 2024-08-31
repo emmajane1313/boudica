@@ -1,6 +1,6 @@
 {
   "Home": {
-    "gemara": "Gemara",
+    "guemara": "Gemara",
     "publicacion": "Publish",
     "idioma": "Language",
     "billetera": "Wallet",
@@ -8,7 +8,9 @@
     "error": "Something Went Wrong Indexing Your Interaction. Try Again?",
     "success": "Interaction Successful",
     "indexing": "Indexing Interaction",
-    "send": "Send"
+    "send": "Send",
+    "lensHandle": "Claim Your Lens Handle To Connect.",
+    "recentrar": "Recenter"
   },
   "404": {
     "nada": "Error 404: This page has been hijacked by rogue NPCs. We are negotiating it's liberation."
