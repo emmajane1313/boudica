@@ -88,17 +88,6 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
         </div>
       </div>
 
-      {publicacion && (
-        <PostBox
-          manejarLens={manejarLens}
-          publicClient={publicClient}
-          dict={dict}
-          pageFlipRef={pageFlipRef}
-          lensConectado={context?.lensConectado}
-          path={path}
-          comentarioId={context?.mostrarDetalles}
-        />
-      )}
       {guemara && (
         <Guemara
           pageFlipRef={pageFlipRef}
@@ -108,6 +97,17 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
           path={path}
           mostrarDetalles={context?.mostrarDetalles!}
           setMostrarDetalles={context?.setMostrarDetalles!}
+        />
+      )}
+      {publicacion && (
+        <PostBox
+          manejarLens={manejarLens}
+          publicClient={publicClient}
+          dict={dict}
+          pageFlipRef={pageFlipRef}
+          lensConectado={context?.lensConectado}
+          path={path}
+          comentarioId={context?.mostrarDetalles}
         />
       )}
       <Panel
