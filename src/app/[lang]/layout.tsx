@@ -18,6 +18,12 @@ export const metadata: Metadata = {
       "https://thedial.infura-ipfs.io/ipfs/QmYte34KVQnhzCxjkjssobFDdWuRJURXCpM9xSrru3KjRk",
     ],
   },
+  robots: {
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   keywords:
     "Web3, Web3 Fashion, Moda Web3, Open Source, CC0, Emma-Jane MacKinnon-Lee, Open Source LLMs, DIGITALAX, F3Manifesto, www.digitalax.xyz, www.f3manifesto.xyz, Women, Life, Freedom.",
   openGraph: {
