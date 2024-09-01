@@ -17,7 +17,7 @@ const PostBox: FunctionComponent<{
   publicClient: PublicClient;
   path: string;
   pageFlipRef: MutableRefObject<PageFlip | null>;
-  comentarioId: string | undefined
+  comentarioId: string | undefined;
 }> = ({
   dict,
   lensConectado,
@@ -25,7 +25,7 @@ const PostBox: FunctionComponent<{
   publicClient,
   path,
   pageFlipRef,
-  comentarioId
+  comentarioId,
 }): JSX.Element => {
   const {
     descripcion,
@@ -42,7 +42,21 @@ const PostBox: FunctionComponent<{
   } = usePostBox(manejarLens, publicClient, pageFlipRef, comentarioId);
 
   return (
-    <div className="absolute w-fit h-fit flex items-center justify-center top-5 left-5">
+    <div
+      className={`absolute w-fit h-fit flex items-center justify-center top-5 left-5 ${
+        path?.includes("/ar/")
+          ? "font-ruw"
+          : path?.includes("/uk/")
+          ? "font-ad"
+          : path?.includes("/ja/")
+          ? "font-gen"
+          : path?.includes("/he/") || path?.includes("/yi/")
+          ? "font-noto"
+          : path?.includes("/fa/")
+          ? "font-zar"
+          : "font-conso"
+      }`}
+    >
       <div className="relative w-[28rem] h-[28rem] flex items-start justify-center">
         <div className="absolute top-0 left-0 flex w-full h-full">
           <Image
@@ -71,7 +85,7 @@ const PostBox: FunctionComponent<{
               );
             }}
             ref={elementoTexto as any}
-            className={`relative p-1 bg-crema text-base w-full h-full break-words focus:outline-none border-2 border-[#49483F] ${
+            className={`relative bg-crema text-base w-full h-full break-words focus:outline-none border-2 border-[#49483F] ${
               path?.includes("/uk/")
                 ? "font-cor"
                 : path?.includes("/ar/") || path?.includes("/fa/")
@@ -81,27 +95,20 @@ const PostBox: FunctionComponent<{
                 : path?.includes("/he/") || path?.includes("/yi/")
                 ? "font-rub"
                 : "font-type"
-            }`}
+            } ${comentarioId ? "px-1 pb-1 pt-5" : "p-1"}`}
             style={{
               resize: "none",
             }}
           ></textarea>
+          {comentarioId && (
+            <div className="absolute top-3 right-3 text-xxs text-black">
+              {dict.Home.comentario + ` ${comentarioId}`}
+            </div>
+          )}
           <div
             className={`absolute bottom-2 right-2 flex items-center justify-center w-fit text-xs h-fit ${
               !cargandoConexion &&
               "cursor-pointer active:scale-95 hover:opacity-70"
-            } ${
-              path?.includes("/ar/")
-                ? "font-ruw"
-                : path?.includes("/uk/")
-                ? "font-ad"
-                : path?.includes("/ja/")
-                ? "font-gen"
-                : path?.includes("/he/") || path?.includes("/yi/")
-                ? "font-noto"
-                : path?.includes("/fa/")
-                ? "font-zar"
-                : "font-conso"
             }`}
             onClick={() => !cargandoConexion && hacerPublicacion()}
           >

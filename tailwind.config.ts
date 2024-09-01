@@ -28,6 +28,9 @@ const config: Config = {
         not: "Noto",
         zar: "Zar",
       },
+      fontSize: {
+        xxs: "0.5rem"
+      }
     },
   },
   plugins: [],

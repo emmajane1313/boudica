@@ -10,7 +10,8 @@
     "indexing": "Indexing Interaction",
     "send": "Send",
     "lensHandle": "Claim Your Lens Handle To Connect.",
-    "recentrar": "Recenter"
+    "recentrar": "Recenter",
+    "comentario": "Comment on"
   },
   "404": {
     "nada": "Error 404: This page has been hijacked by rogue NPCs. We are negotiating it's liberation."

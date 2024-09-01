@@ -11,6 +11,7 @@ export type Dictionary = {
     lensHandle: string;
     lens: string;
     error: string;
+    comentario: string;
     send: string;
     recentrar: string;
   };
