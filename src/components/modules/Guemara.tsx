@@ -58,7 +58,7 @@ const Guemara: FunctionComponent<{
           return (
             <div
               key={i}
-              className={`relative  w-full h-full flex text-white overflow-y-scroll text-justify text-xs	whitespace-inline ${
+              className={`relative  w-full h-full flex text-white overflow-y-scroll text-justify text-xxs sm:text-xs whitespace-inline ${
                 path?.includes("/ar/")
                   ? "font-ruw"
                   : path?.includes("/uk/")
@@ -87,7 +87,7 @@ const Guemara: FunctionComponent<{
             return (
               <div
                 key={i}
-                className={`relative w-full h-full flex text-white overflow-y-scroll text-justify	whitespace-inline  ${
+                className={`relative w-full h-full flex text-white overflow-y-scroll text-justify text-sm sm:text-base  	whitespace-inline  ${
                   path?.includes("/ar/")
                     ? "font-ruw"
                     : path?.includes("/uk/")
@@ -116,7 +116,7 @@ const Guemara: FunctionComponent<{
             return (
               <div
                 key={i}
-                className={`relative w-full h-full flex text-white overflow-y-scroll text-justify  whitespace-inline ${
+                className={`relative w-full h-full flex text-white overflow-y-scroll text-justify text-sm sm:text-base  whitespace-inline ${
                   path?.includes("/ar/")
                     ? "font-ruw"
                     : path?.includes("/uk/")
@@ -145,7 +145,7 @@ const Guemara: FunctionComponent<{
           return (
             <div
               key={i}
-              className={`relative w-full h-full flex text-white overflow-y-scroll  text-justify text-lg whitespace-inline ${
+              className={`relative w-full h-full flex text-white overflow-y-scroll  text-justify text-base sm:text-lg whitespace-inline ${
                 path?.includes("/ar/")
                   ? "font-ruw"
                   : path?.includes("/uk/")

@@ -43,7 +43,7 @@ const PostBox: FunctionComponent<{
 
   return (
     <div
-      className={`absolute w-fit h-fit flex items-center justify-center top-5 left-5 ${
+      className={`absolute w-full sm:w-fit h-fit flex items-center justify-center top-1/3 sm:top-5 left-0 sm:left-5 ${
         path?.includes("/ar/")
           ? "font-ruw"
           : path?.includes("/uk/")
@@ -57,7 +57,7 @@ const PostBox: FunctionComponent<{
           : "font-conso"
       }`}
     >
-      <div className="relative w-[28rem] h-[28rem] flex items-start justify-center">
+      <div className="relative w-full h-[24rem] sm:w-[28rem] sm:h-[28rem] flex items-start justify-center">
         <div className="absolute top-0 left-0 flex w-full h-full">
           <Image
             layout="fill"
@@ -68,7 +68,7 @@ const PostBox: FunctionComponent<{
           />
         </div>
         <div
-          className={`relative w-3/4 h-[13rem] flex flex-col items-center text-black justify-start`}
+          className={`relative w-5/6 sm:w-3/4 h-[13rem] flex flex-col items-center text-black justify-start`}
         >
           <textarea
             value={descripcion || ""}
