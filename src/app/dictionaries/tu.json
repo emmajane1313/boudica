@@ -1,0 +1,20 @@
+{
+    "Home": {
+      "guemara": "Gemara",
+      "publicacion": "Yayınla",
+      "idioma": "Dil",
+      "billetera": "Cüzdan",
+      "lens": "Lens",
+      "error": "Etkileşiminizi dizine eklerken bir sorun oluştu. Tekrar deneyin?",
+      "success": "Etkileşim Başarılı",
+      "indexing": "Etkileşim Dizine Ekleniyor",
+      "send": "Gönder",
+      "lensHandle": "Bağlanmak için Lens Kullancı Adınızı Alın.",
+      "recentrar": "Merkeze Al",
+      "comentario": "Yorum yap"
+    },
+    "404": {
+      "nada": "Hata 404: Bu sayfa asi NPC'ler tarafından kaçırıldı. Serbest bırakılması için müzakereler yapıyoruz."
+    }
+  }
+  

@@ -1,0 +1,19 @@
+{
+  "Home": {
+    "guemara": "Gemara",
+    "publicacion": "Közzététel",
+    "idioma": "Nyelv",
+    "billetera": "Tárca",
+    "lens": "Lens",
+    "error": "Valami hiba történt az interakció indexelésekor. Próbálja újra?",
+    "success": "Interakció sikeres",
+    "indexing": "Interakció indexelése",
+    "send": "Küld",
+    "lensHandle": "Szerezze meg a Lens kezelőt a csatlakozáshoz.",
+    "recentrar": "Újracentrál",
+    "comentario": "Hozzászólás"
+  },
+  "404": {
+    "nada": "404-es hiba: Ezt az oldalt renitens NPC-k eltérítették. Tárgyalunk a felszabadításáról."
+  }
+}

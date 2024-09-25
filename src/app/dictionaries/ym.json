@@ -1,0 +1,19 @@
+{
+  "Home": {
+    "guemara": "Gemara",
+    "publicacion": "Mayaliŋu",
+    "idioma": "Dhäruk",
+    "billetera": "Diltji",
+    "lens": "Lens",
+    "error": "Djäma galŋarr",
+    "success": "Djäma gaḻpu",
+    "indexing": "Djäma nhäŋuwuy",
+    "send": "Bäyŋu",
+    "lensHandle": "Raki'yun yäku nhe",
+    "recentrar": "Marrtji gaḻa",
+    "comentario": "Märr nhäma"
+  },
+  "404": {
+    "nada": "404: Dhuwal bäyŋu wäŋa yaka djäma. Ŋarraku rom bäyŋu marrtji walkabout. Dhuwandja gaḻpu nhäma."
+  }
+}
