@@ -124,6 +124,7 @@ const useEnfoque = () => {
           mobileScrollSupport: true,
           showPageCorners: true,
           autoSize: true,
+          useMouseEvents: true
         });
 
         pageFlipRef.current.loadFromHTML(document.querySelectorAll(".page"));
