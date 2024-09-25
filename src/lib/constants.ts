@@ -4,7 +4,7 @@ export const COVERS: {
 }[] = [
   {
     locale: "en",
-    imagenes: ["QmT8y3MsNUYjb5qoAKZG3fsvm9joEo1dBPxAmM7uxZcE13"],
+    imagenes: ["QmT8y3MsNUYjb5qoAKZG3fsvm9joEo1dBPxAmM7uxZcE13", "QmNePYSf77bjjopmj5MhdFp6JGeP3ULSFYxJcsZGd84Rnv"],
   },
   {
     locale: "es",

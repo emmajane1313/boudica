@@ -58,7 +58,7 @@ const Principal: FunctionComponent<PrincipalProps> = ({ dict }) => {
         cursor: arrastrando ? "grabbing" : "default",
       }}
     >
-      <div className={`relative`}>
+      <div className={`relative`} id="padre">
         <div
           className="relative w-full transition-transform duration-300 ease-out h-full flex items-center justify-center"
           ref={bookRef}
