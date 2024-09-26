@@ -74,15 +74,24 @@ export const COVERS: {
   },
   {
     locale: "hu",
-    imagenes: [""],
+    imagenes: [
+      "QmbGTthyoi3sjdbjTmWuDrARVhiCBCSYYy9XEk3wk67EET",
+      "QmR53sXjza75E2AzYFisfjAwsd16Gi5Jf3P87GQy8Ya6WN",
+    ],
   },
   {
     locale: "tu",
-    imagenes: [""],
+    imagenes: [
+      "Qmd18iDM1rgr5fUib1BihxJVbE6rHSf2rQAJQDr5oYDnHT",
+      "QmfHbBL8KWmgQSPNj3VzZ2Vc4KPzY8vw1kEP1Ms6rKrvkw",
+    ],
   },
   {
     locale: "ym",
-    imagenes: [""],
+    imagenes: [
+      "QmXVhuABgy2HGcp6Z9EGf8VpB26KNMv2RC6Yt57aB5Zqxp",
+      "Qme2s3xPb7ZfxmAyXh4cq5P6oQKTrMYchs721DXkJBi9ym",
+    ],
   },
 ];
 
