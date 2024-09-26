@@ -124,7 +124,7 @@ const useEnfoque = () => {
           mobileScrollSupport: true,
           showPageCorners: true,
           autoSize: true,
-          useMouseEvents: true
+          useMouseEvents: true,
         });
 
         pageFlipRef.current.loadFromHTML(document.querySelectorAll(".page"));
@@ -159,7 +159,13 @@ const useEnfoque = () => {
         ? path.replace("/yi/", "/ja/")
         : path.includes("/ja/")
         ? path.replace("/ja/", "/fr/")
-        : path.replace("/fr/", "/es/")
+        : path.includes("/fr/")
+        ? path.replace("/fr/", "/hu/")
+        : path.includes("/hu/")
+        ? path.replace("/hu/", "/ym/")
+        : path.includes("/ym/")
+        ? path.replace("/ym/", "/tu/")
+        : path.replace("/tu/", "/es/")
     );
   };
 
