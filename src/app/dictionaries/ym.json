@@ -1,19 +1,19 @@
 {
   "Home": {
     "guemara": "Gemara",
-    "publicacion": "Mayaliŋu",
-    "idioma": "Dhäruk",
-    "billetera": "Diltji",
+    "publicacion": "Dhäwu",
+    "idioma": "Matha",
+    "billetera": "Bathi",
     "lens": "Lens",
-    "error": "Djäma galŋarr",
-    "success": "Djäma gaḻpu",
-    "indexing": "Djäma nhäŋuwuy",
-    "send": "Bäyŋu",
-    "lensHandle": "Raki'yun yäku nhe",
-    "recentrar": "Marrtji gaḻa",
-    "comentario": "Märr nhäma"
+    "error": "Baba'mirri",
+    "success": "Manymak",
+    "indexing": "Baḏak",
+    "send": "Dhayuŋan",
+    "lensHandle": "Yäku",
+    "recentrar": "Waypuṉa",
+    "comentario": "Buku-bakmarama"
   },
   "404": {
-    "nada": "404: Dhuwal bäyŋu wäŋa yaka djäma. Ŋarraku rom bäyŋu marrtji walkabout. Dhuwandja gaḻpu nhäma."
+    "nada": "Baba'mirri 404: Dhuwal dhäŋuny buku-gänaŋ'thirri."
   }
 }
